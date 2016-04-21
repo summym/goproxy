@@ -81,45 +81,44 @@
 	},
 	```
     
-## main.json 文件
+## httpproxy.json 文件
 
-* "Addr" 选项
+* "Address" 选项
 
 这里一般不用改。格式： "IP地址:端口"
 
 这里常用有两种(任选一种)：
 
 	```
-	"Addr": "127.0.0.1:8087",
+	"Address": "127.0.0.1:8087",
     
-	"Addr": "0.0.0.0:8087",
+	"Address": "0.0.0.0:8087",
 	```
     
 注：   
 1. 第一种是只能本机使用。   
 2. 第二种是用来共享时使用。当然本机也能用。
 
-* "Filters" 选项
+* "RequestFilters"、"RoundTripFilters"、"ResponseFilters" 选项
 
 说明：双斜杠 "//" 是注释符号，取消即使用。   
 以下是开启autorange，并且使用gae时的实例：
 
 	```
-	"Filters": {
-		"Request": [
+	"RequestFilters": [
 			// "auth",
 			"stripssl",
 			"autorange",
 		],
-		"RoundTrip": [
+		"RoundTripFilters": [
 			"autoproxy",
 			// "auth",
 			// "vps",
-			//"php",
+			// "php",
 			"gae",
 			"direct",
 		],
-		"Response": [
+		"ResponseFilters": [
 			"autorange",
 			// "ratelimit",
 		]
