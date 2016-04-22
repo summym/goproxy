@@ -80,7 +80,7 @@
 		]
 	},
 	```
-    
+可用扫ip工具获取可用的google服务器ip（如[CheckIpTools](https://github.com/xyuanmu/checkiptools)） 
 ## main.json 文件
 
 * "Addr" 选项
